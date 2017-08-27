@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "手机归属地",
+  "short_name": "手机归属",
+  "description": "用这个工具来查询手机归属地，按住按钮“T”，然后选中手机号码，稍等1秒钟就可以看到手机归属地",
+  "version": "1.0",
+  "author": "qiuyu",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "手机归属查询工具"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+
+  "commands": {
+    "location-lookup": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Z",
+        "mac": "MacCtrl+Shift+Z"
+      },
+      "description": "执行查找手机归属"
+    }
+  },
+
+  "background": {
+    "persistent": false,
+    "scripts": ["content_script.js"]
+  }
+}
